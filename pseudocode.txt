@@ -1,0 +1,93 @@
+For example, write out pseudo-code (both casual and formal) that does the following:
+
+a method that returns the sum of two integers
+a method that takes an array of strings, and returns a string that is all those strings concatenated together
+a method that takes an array of integers, and returns a new array with every other element
+
+************
+Method that returns the sum of two integers
+************
+
+Given two integers
+Add the two integers
+Return the result of adding the two integers
+
+
+START
+
+# Given two integers
+SET integer1 = first integer
+SET integer2 = second integer
+
+SET result = integer1 + integer2
+PRINT result
+
+END
+
+
+************
+Method that takes an array of strings, and returns a string that is all those strings concatenated
+************
+
+Given an array of strings
+
+Start with an empty string
+
+Iterate through the array until no items are left in the array
+  Remove the first element of the array
+  Concatenate the removed element of the array to the string
+  
+Return the string
+
+
+START
+
+# Given an array of strings
+
+SET concat_string = ''
+WHILE array.count > 0
+  REMOVE first element of array
+  CONCATENATE first element of array to end of concat_string
+  
+RETURN concat_string
+
+END
+
+************
+Method that takes an array of integers, and returns a new array with every other element
+************
+
+Given an array of integers
+
+Start with a new, empty array
+Set an iterator to count the number of elements in the original array
+
+Iterate through the original array
+  Read the index of the array value
+  If the index is odd
+    Go to next value
+  If the index is even
+    Add the value to the new array
+    
+Return the new array
+
+
+START
+
+# Given an array of integers orig_array
+
+SET new_array = []
+SET iterator = 0
+
+WHILE iterator < number of elements in orig_array
+  READ index of orig_array element
+  IF index is odd
+    next
+  ELSE
+    add orig_array[index] to new_array
+  iterator += 1
+    
+RETURN new_array
+
+END
+
