@@ -61,7 +61,7 @@ loop do
     end
   end
 
-  operation_prompt = <<-MSG
+  operation_prompt = <<~MSG
     What operation would you like to perform?
     1) Add
     2) Subtract
