@@ -2,13 +2,15 @@
 # ask the user for an operation
 # perform the operation on the two numbers
 # output the result
+# require 'pry'
 
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
 def valid_number?(num)
-  num.to_i() != 0
+  num.class() == Numeric
+  # binding.pry
 end
 
 def operation_to_message(op)

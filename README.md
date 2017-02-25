@@ -12,3 +12,4 @@
 9.  Rubocop
 10. Walk-through: Refactoring Calculator
 11. Rubocop Calculator
+12. Debugging
