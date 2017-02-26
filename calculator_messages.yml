@@ -1,0 +1,27 @@
+# calculator_messages.yml
+
+en:
+  welcome: "Welcome to Calculator! Please enter your name: "
+  valid_name: "Please enter a valid name."
+  # hello: "Hi, %{name}!"
+  get_first_number: "What is the first number?"
+  invalid_number: "Hmm… That doesn't look like a valid number."
+  get_second_number: "What is the second number?"
+  # calculating: "#{operation_to_message(operation)} the two numbers…"
+  # result: "The result is #{result}."
+  another_calc: "Would you like to perform another calculation? (Y to calculate)"
+  thanks: "Thank you for using the calculator. Goodbye!"
+  invalid_op: "You must choose 1, 2, 3, or 4."
+  
+fr:
+  welcome: "Bienvenue au Calculator! Veuillez taper votre nom: "
+  valid_name: "Veuillez entrer un nom valide."
+  # hello: "Hi, %{name}!"
+  get_first_number: "Quel est le premier chiffre?"
+  invalid_number: "Hmm… Cela n'a pas l'air d'un chiffre valide."
+  get_second_number: "Quel est le deuxième chiffre?"
+  # calculating: "#{operation_to_message(operation)} the two numbers…"
+  # result: "The result is #{result}."
+  another_calc: "Désirez-vous faire encore une opération? (Y pour calculer)"
+  thanks: "Merci d'utiliser le Calculator. Au revoir!"
+  invalid_op: "Il faut choisir 1, 2, 3, ou 4."
