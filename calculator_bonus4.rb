@@ -2,26 +2,28 @@
 # ask the user for an operation
 # perform the operation on the two numbers
 # output the result
-require 'pry'
+
+# The value of name on line 2 is hardcoded in the example. { name: "John" } is a Ruby hash. Replace "John" with a variable that you define outside of the hash, or you can just build hash before, have a variable reference it and then use the variable as an argument to String#%.
+
+# require 'pry'
 
 require 'yaml'
 MESSAGES = YAML.load_file('calculator_messages.yml')
-# MESSAGES['hello'] % {name: "Lori"}
-LANGUAGE = 'fr'
+LANGUAGE = 'en'
 
 def messages(message, lang)
-  binding.pry
+  # binding.pry
   MESSAGES[lang][message]
 end
 
 def prompt(key)
-  binding.pry
+  # binding.pry
   message = messages(key, LANGUAGE)
   Kernel.puts("=> #{message}")
 end
 
 def number?(num)
-  num.match(/\d/)
+  num.match(/\d/) && num.match(/^\d*\.?\d*$/)
 end
 
 def operation_to_message(op)
@@ -84,7 +86,7 @@ loop do
     4) Divide
   MSG
 
-  prompt(operation_prompt)
+  Kernel.puts(operation_prompt)
 
   operation = ''
   loop do

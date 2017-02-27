@@ -13,3 +13,4 @@
 10. Walk-through: Refactoring Calculator
 11. Rubocop Calculator
 12. Debugging
+13. Assignment: Calculator Bonus Features
