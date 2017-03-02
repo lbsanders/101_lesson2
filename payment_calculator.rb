@@ -35,28 +35,24 @@
 # **************
 
 def pos_number?(n)
-  (n.match(/\d/) && n.match(/^\d*\.?\d*$/)) && n.to_f > 0
+  (n.match(/\d/) && n.match(/^\d*\.?\d*$/)) && n.to_f >= 0
 end
 
 def prompt(message)
-  Kernel.puts(">>> #{message}")
+  Kernel.puts(">> #{message}")
 end
 
 def invalid_number
   prompt("Your entry must be a positive number. Please try again.")
 end
 
-def blankline()                                                     # BETTER WAY?
-  puts('')
-end
-
-blankline()
+Kernel.puts("\n")
 prompt("Welcome to the Loan Payment Calculator.")
 
 principal = ''
 loop do
   prompt("What is the amount to be borrowed?")
-  principal = gets().chomp()
+  principal = Kernel.gets().chomp()
   if pos_number?(principal)
     break
   else
@@ -67,7 +63,7 @@ end
 annual_int_rate = ''
 loop do
   prompt("What is the annual percentage rate on the loan?")
-  annual_int_rate = gets().chomp()
+  annual_int_rate = Kernel.gets().chomp()
   if pos_number?(annual_int_rate)
     break
   else
@@ -78,8 +74,8 @@ end
 duration_yrs = ''
 loop do
   prompt("How many years will you take to repay it?")
-  duration_yrs = gets().chomp()
-  if pos_number?(duration_yrs)
+  duration_yrs = Kernel.gets().chomp()
+  if pos_number?(duration_yrs) && duration_yrs.to_f > 0
     break
   else
     invalid_number()
@@ -89,15 +85,18 @@ end
 monthly_int_rate = annual_int_rate.to_f / 1200
 duration_months = duration_yrs.to_f * 12
 
-monthly_payment = principal.to_f *
-                  (monthly_int_rate /
-                  (1 - ((1 + monthly_int_rate)**-duration_months))) # CHECK FORMULA
+if monthly_int_rate == 0
+  monthly_payment = principal.to_f / duration_months
+else
+  monthly_payment = principal.to_f *
+                    (monthly_int_rate /
+                    (1 - ((1 + monthly_int_rate)**-duration_months)))
+end
 
-monthly_payment = monthly_payment.round(2)
+## monthly_payment = monthly_payment.round(2)
 
-prompt("For a loan amount of $#{principal} at #{annual_int_rate}%   
-over #{duration_yrs} years,")                                       # REFORMAT
-prompt("your payment each month would be $#{monthly_payment}.")
-blankline()
+prompt("A $#{principal} loan at #{annual_int_rate}% over #{duration_yrs} years")
+prompt("requires a $#{format('%02.2f', monthly_payment)} monthly payment.")
+Kernel.puts("\n")
 prompt("Thank you for using the Loan Payment Calculator.")
-blankline()
+Kernel.puts("\n")
