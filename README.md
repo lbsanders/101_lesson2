@@ -14,3 +14,6 @@
 11. Rubocop Calculator
 12. Debugging
 13. Assignment: Calculator Bonus Features
+14. Assignment: Mortgage/Car Loan Calculator
+15. Coding Tips
+16. 
