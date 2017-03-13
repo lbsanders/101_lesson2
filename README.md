@@ -14,3 +14,7 @@
 11. Rubocop Calculator
 12. Debugging
 13. Assignment: Calculator Bonus Features
+14. Assignment: Mortgage Loan Calculator
+15. Coding Tips
+16. Variable Scope
+17. Pass by Reference vs Pass by Value
