@@ -42,7 +42,7 @@ def prompt(message)
   Kernel.puts(">> #{message}")
 end
 
-def invalid_number
+def display_invalid_number_message
   prompt("Your entry must be a positive number. Please try again.")
 end
 
@@ -56,7 +56,7 @@ loop do
   if pos_number?(principal)
     break
   else
-    invalid_number()
+    display_invalid_number_message()
   end
 end
 
@@ -67,7 +67,7 @@ loop do
   if pos_number?(annual_int_rate)
     break
   else
-    invalid_number()
+    display_invalid_number_message()
   end
 end
 
@@ -78,7 +78,7 @@ loop do
   if pos_number?(duration_yrs) && duration_yrs.to_f > 0
     break
   else
-    invalid_number()
+    display_invalid_number_message()
   end
 end
 
