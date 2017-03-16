@@ -6,33 +6,6 @@ WINNING_COMBINATIONS = [%w(rock scissors), %w(rock lizard),
                         %w(lizard paper), %w(lizard Spock),
                         %w(Spock rock), %w(Spock scissors)]
 
-def test_method
-  prompt('test message')
-end
-
-# def win?(first, second)
-#   (first == 'rock' && (second == 'scissors' || second == 'lizard')) ||
-#     (first == 'paper' && (second == 'Spock' || second == 'rock')) ||
-#     (first == 'scissors' && (second == 'lizard' || second == 'paper')) ||
-#     (first == 'lizard' && (second == 'paper' || second == 'Spock')) ||
-#     (first == 'Spock' && (second == 'rock' || second || 'scissors'))
-# end
-
-# def win?(first, second)
-#   case first
-#   when 'rock'
-#     second == 'scissors' || second == 'lizard'
-#   when 'paper'
-#     second == 'Spock' || second == 'rock'
-#   when 'scissors'
-#     second == 'lizard' || second == 'paper'
-#   when 'lizard'
-#     second == 'paper' || second == 'Spock'
-#   when 'Spock'
-#     second == 'rock' || second || 'scissors'
-#   end
-# end
-
 def win?(first, second)
   WINNING_COMBINATIONS.include?([first, second])
 end
