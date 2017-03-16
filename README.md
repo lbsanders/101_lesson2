@@ -14,9 +14,9 @@
 11. Rubocop Calculator
 12. Debugging
 13. Assignment: Calculator Bonus Features
-<<<<<<< HEAD
 14. Assignment: Mortgage/Car Loan Calculator
 15. Coding Tips
 16. Variable Scope
 17. Pass by Reference vs Pass by Value
->>>>>>> a0007359cbf576907a82bedc78e40171f37e42a8
+18. Walk-through: Rock Paper Scissors
+19. Rubocop Rock Paper Scissors
