@@ -1,13 +1,17 @@
-VALID_CHOICES = %w(rock paper scissors lizard Spock)
+VALID_CHOICES = { r: 'rock',
+                  p: 'paper',
+                  s: 'scissors',
+                  l: 'lizard',
+                  v: 'Spock' }
 
-WINNING_COMBINATIONS = [%w(rock scissors), %w(rock lizard),
-                        %w(paper Spock), %w(paper rock),
-                        %w(scissors lizard), %w(scissors paper),
-                        %w(lizard paper), %w(lizard Spock),
-                        %w(Spock rock), %w(Spock scissors)]
+WINNING_COMBINATIONS = [%w(r s), %w(r l),
+                        %w(p v), %w(p r),
+                        %w(s l), %w(s p),
+                        %w(l p), %w(l v),
+                        %w(v r), %w(v s)]
 
 def win?(first, second)
-  WINNING_COMBINATIONS.include?([first, second])
+  WINNING_COMBINATIONS.include?([first.to_s, second.to_s])
 end
 
 def display_results(player, computer)
@@ -27,22 +31,26 @@ end
 loop do
   choice = ''
   loop do
-    prompt("Choose one: #{VALID_CHOICES.join(', ')}")
-    choice = Kernel.gets().chomp()
+    prompt("Choose one: rock, paper, scissors, lizard, Spock")
+    VALID_CHOICES.each { |key, value| puts "     #{key} for #{value}" }
+    choice = Kernel.gets().chomp().downcase.to_sym
 
-    if VALID_CHOICES.include?(choice)
+    if VALID_CHOICES.key?(choice)
       break
     else
       prompt("That is not a valid choice.")
     end
   end
 
-  computer_choice = VALID_CHOICES.sample()
+  computer_choice = VALID_CHOICES.keys.sample()
 
-  prompt("You chose #{choice}; Computer chose #{computer_choice}")
+  prompt("You chose #{VALID_CHOICES[choice]}")
+  prompt("Computer chose #{VALID_CHOICES[computer_choice]}")
+  prompt("")
 
   display_results(choice, computer_choice)
 
+  prompt("")
   prompt("Do you want to play again?")
   answer = Kernel.gets().chomp()
   break unless answer.downcase().start_with?('y')
