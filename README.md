@@ -20,3 +20,5 @@
 17. Pass by Reference vs Pass by Value
 18. Walk-through: Rock Paper Scissors
 19. Rubocop Rock Paper Scissors
+20. Coding Tips 2
+21. Assignment: RPS Bonus Features
